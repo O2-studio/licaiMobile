@@ -1,0 +1,43 @@
+<ion-view hide-nav-bar="true">
+  <ion-content class="padding">
+    <ion-slide-box auto-play="true" slide-interval="1000" does-continue="true" show-pager="true">
+      <ion-slide>
+        <div class="box">
+            <img class="slide-image" src="http://www.licai.com/geshang/yuedu/sjsy_tu3.jpg?987" alt="">
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box">
+            <img class="slide-image" src="http://www.licai.com/geshang/yuedu/sjsy_tu1.jpg?594" alt="">
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box">
+            <img class="slide-image" src="http://www.licai.com/geshang/yuedu/sjsy02.jpg?670" alt="">
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+    
+    <ion-list type="card" ng-controller="fundCtrl">
+        <ion-item ng-repeat="fund in items">
+            <div>
+                <span>{{fund.name}}</span>
+                <span class="fund-ing">募集中</span>
+            </div>
+            <div>
+                <span>基金经理：{{fund.staff.name}}</span>
+                <span>2014年收益: {{fund.staff.score}}%</span>
+            </div>
+            
+            <div>
+                <span>今年收益</span>
+                <span>{{fund.score}}</span>
+            </div>
+            <div>
+                <span>认购起点</span>
+                <span>{{fund.minimal}}</span>
+            </div>
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
