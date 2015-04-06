@@ -24,6 +24,40 @@ angular.module('starter.controllers', [])
         {
             name:'创富1期',
             ing: true,
+            on: true,
+            staff: {
+                name: '蒋勇',
+                score: 35.82
+            },
+            score: 21.26,
+            minimal: '100万元'
+        },
+        {
+            name:'创富1期',
+            ing: true,
+            on: true,
+            staff: {
+                name: '蒋勇',
+                score: 35.82
+            },
+            score: 21.26,
+            minimal: '100万元'
+        },
+        {
+            name:'创富1期',
+            ing: true,
+            on: true,
+            staff: {
+                name: '蒋勇',
+                score: 35.82
+            },
+            score: 21.26,
+            minimal: '100万元'
+        },
+        {
+            name:'创富1期',
+            ing: true,
+            on: true,
             staff: {
                 name: '蒋勇',
                 score: 35.82

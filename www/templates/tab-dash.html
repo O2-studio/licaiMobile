@@ -19,23 +19,29 @@
     </ion-slide-box>
     
     <ion-list type="card" ng-controller="fundCtrl">
-        <ion-item ng-repeat="fund in items">
+        <ion-item ng-repeat="fund in items" class="fund-card">
             <div>
-                <span>{{fund.name}}</span>
-                <span class="fund-ing">募集中</span>
+                <span class="fund-name">{{fund.name}}</span>
+                <span class="fund-status" ng-class="{on:fund.on}">
+                 <span ng-if="fund.on">募集中</span>
+                 <span ng-if="!fund.on">未募集</span>
+                </span>
             </div>
-            <div>
+            <div class="fund-staff">
                 <span>基金经理：{{fund.staff.name}}</span>
-                <span>2014年收益: {{fund.staff.score}}%</span>
+                <span>2014年收益:</span>
+                <span class="fund-staff-score">{{fund.staff.score}}%</span>
             </div>
             
-            <div>
-                <span>今年收益</span>
-                <span>{{fund.score}}</span>
-            </div>
-            <div>
-                <span>认购起点</span>
-                <span>{{fund.minimal}}</span>
+            <div class="fund-detail">
+                <div class="detail-item">
+                    <span>今年收益</span>
+                    <span class="fund-score">{{fund.score}}%</span>
+                </div>
+                <div class="detail-item">
+                    <span>认购起点</span>
+                    <span class="fund-minimal">{{fund.minimal}}</span>
+                </div>
             </div>
         </ion-item>
     </ion-list>

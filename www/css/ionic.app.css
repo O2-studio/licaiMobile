@@ -7605,3 +7605,46 @@ a.button {
 
 .slide-image {
   width: 100%; }
+
+.fund-name {
+  font-size: 16px;
+  font-weight: bold; }
+
+.fund-status.on {
+  background: #E73822;
+  text-align: center;
+  width: 46px;
+  line-height: 20px;
+  font-size: 12px;
+  color: #fff;
+  font-weight: normal;
+  position: relative;
+  margin-left: 10px;
+  padding: 5px; }
+
+.fund-card {
+  font-size: 12px;
+  font-family: Helvetica, 微软雅黑; }
+  .fund-card div {
+    margin-bottom: 5px; }
+  .fund-card .fund-staff span {
+    margin-right: 20px; }
+  .fund-card .fund-staff-score {
+    color: #E73822;
+    margin-left: -15px; }
+  .fund-card .fund-detail {
+    border: 1px solid #f1f1f1; }
+    .fund-card .fund-detail .detail-item {
+      display: inline-block;
+      padding: 15px;
+      width: 50%;
+      text-align: center; }
+      .fund-card .fund-detail .detail-item:first-child {
+        border-right: 1px solid #f1f1f1; }
+      .fund-card .fund-detail .detail-item span {
+        display: block; }
+  .fund-card .fund-score, .fund-card .fund-minimal {
+    font-size: 20px;
+    margin-top: 5px; }
+  .fund-card .fund-score {
+    color: #E73822; }
