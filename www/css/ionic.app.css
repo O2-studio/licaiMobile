@@ -7603,6 +7603,9 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+body {
+  font-family: 微软雅黑, Aria; }
+
 .slide-image {
   width: 100%; }
 
@@ -7648,3 +7651,14 @@ a.button {
     margin-top: 5px; }
   .fund-card .fund-score {
     color: #E73822; }
+
+.sub-pages {
+  border-collapse: collapse;
+  width: 90%;
+  margin: 10px auto; }
+  .sub-pages .sub-page {
+    text-align: center;
+    border: 1px solid #ddd;
+    height: 42px;
+    vertical-align: middle;
+    font-weight: bold; }

@@ -19,7 +19,7 @@
     </ion-slide-box>
     
     <ion-list type="card" ng-controller="fundCtrl">
-        <ion-item ng-repeat="fund in items" class="fund-card" ng-click="goDetail(fund.id)">
+        <ion-item ng-repeat="fund in items" class="fund-card" href="#/tab/dash/{{fund.id}}">
             <div>
                 <span class="fund-name">{{fund.name}}</span>
                 <span class="fund-status" ng-class="{on:fund.on}">

@@ -19,7 +19,7 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('fundCtrl', ['$scope','$state', function($scope, $state) {
+.controller('fundCtrl', function($scope, $state, Funds) {
     function Fund(json) {
         this.name = json.name || '';
         this.on = json.status === 1;
@@ -35,57 +35,10 @@ angular.module('starter.controllers', [])
 
     $scope.goDetail = goDetail;
 
-    $scope.items = [
-        {
-            name:'创富1期',
-            on: true,
-            staff: {
-                name: '蒋勇',
-                score: 35.82
-            },
-            score: 21.26,
-            minimal: '100万元',
-            id: 1000001
-        },
-        {
-            name:'创富1期',
-            on: true,
-            staff: {
-                name: '蒋勇',
-                score: 35.82
-            },
-            score: 21.26,
-            minimal: '100万元',
-            id: 1000002
-        },
-        {
-            name:'创富1期',
-            ing: true,
-            on: true,
-            staff: {
-                name: '蒋勇',
-                score: 35.82
-            },
-            score: 21.26,
-            minimal: '100万元',
-            id: 1000003
-        },
-        {
-            name:'创富1期',
-            on: true,
-            staff: {
-                name: '蒋勇',
-                score: 35.82
-            },
-            score: 21.26,
-            minimal: '100万元',
-            id: 1000004
-        }
-    ];
-}])
+    $scope.items = Funds.all();
+})
 
-.controller('fundDetailCtrl', ['$stateParams', '$scope', function($stateParams, $scope){
-    $scope.fundId = $stateParams.fundId;
-    console.log($scope.fundId);
-}]);
+.controller('fundDetailCtrl', function($stateParams, $scope, Funds){
+    $scope.fund = Funds.get($stateParams.fundId);
+});
 ;

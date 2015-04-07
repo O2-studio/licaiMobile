@@ -47,4 +47,68 @@ angular.module('starter.services', [])
       return null;
     }
   };
-});
+})
+
+.factory('Funds', function(){
+    var funds = [
+        {
+            name:'创富1期',
+            on: true,
+            staff: {
+                name: '蒋勇',
+                score: 35.82
+            },
+            score: 21.26,
+            minimal: '100万元',
+            id: 1000001
+        },
+        {
+            name:'创富1期',
+            on: true,
+            staff: {
+                name: '蒋勇',
+                score: 35.82
+            },
+            score: 21.26,
+            minimal: '100万元',
+            id: 1000002
+        },
+        {
+            name:'创富1期',
+            ing: true,
+            on: true,
+            staff: {
+                name: '蒋勇',
+                score: 35.82
+            },
+            score: 21.26,
+            minimal: '100万元',
+            id: 1000003
+        },
+        {
+            name:'创富1期',
+            on: true,
+            staff: {
+                name: '蒋勇',
+                score: 35.82
+            },
+            score: 21.26,
+            minimal: '100万元',
+            id: 1000004
+        }
+    ];
+
+    return {
+        all: function () {
+            return funds;
+        },
+        get: function (fundId) {
+            for(var i = 0; i < funds.length; i++) {
+                if(funds[i].id == fundId) {
+                    return funds[i];
+                }
+            }
+        }
+    };
+})
+;

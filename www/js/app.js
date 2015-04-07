@@ -47,11 +47,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-    .state('tab.dash.fund', {
-        url: '/fund/{fundId}',
-        template: '<h1>hellow world</h1>'
-//        templateUrl: 'templates/fund-detail.html',
-//        controller: 'fundDetailCtrl'
+    .state('tab.fund-detail', {
+        url: '/dash/:fundId',
+        views: {
+            'tab-chats': {
+              templateUrl: 'templates/fund-detail.html',
+              controller: 'fundDetailCtrl'
+            }
+        }
     })
 
   .state('tab.chats', {

@@ -1,0 +1,12 @@
+.sub-pages {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 10px auto;
+    .sub-page {
+        text-align: center;
+        border: 1px solid #ddd;
+        height: 42px;
+        vertical-align: middle;
+        font-weight: bold;
+    }
+}
