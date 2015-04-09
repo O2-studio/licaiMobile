@@ -22,7 +22,7 @@
                 <ul>
                     <li>
                         <span>成立时间：</span>
-                        <span>2013/2/28</span>
+                        <span>{{fund.date}}</span>
                     </li>
                     <li>
                         <span>管理公司：</span>
@@ -32,7 +32,7 @@
                 <ul>
                     <li>
                         <span>基金经理：</span>
-                        <span>fund.staff.name</span>
+                        <span>{{fund.staff.name}}</span>
                     </li>
                     <li>
                         <span>评级：</span>
@@ -41,14 +41,14 @@
                 </ul>
             </div>
             <div>
-                <ul>
-                    <li>
+                <ul class="fund-detail item">
+                    <li class="detail-item">
                         <span>单位净值:</span>
-                        <span>1.6768</span>
+                        <span class="fund-minimal">{{fund.price}}</span>
                     </li>
-                    <li>
+                    <li class="detail-item">
                         <span>今年以来收益：</span>
-                        <span>21.26%</span>
+                        <span class="fund-score">{{fund.score}}%</span>
                     </li>
                 </ul>
             </div>

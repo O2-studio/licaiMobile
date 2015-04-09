@@ -25,49 +25,44 @@
 .fund-card {
     font-size: 12px;
     font-family: Helvetica, 微软雅黑;
-
     div {
         margin-bottom: 5px;
     }
-
     .fund-staff {
         span {
             margin-right: 20px;
         }
     }
-
     .fund-staff-score {
         color: #E73822;
         margin-left: -15px;
     }
-
-    .fund-detail {
-        border: 1px solid #f1f1f1;
-        .detail-item {
-            display: inline-block;
-            padding: 15px;
-            width: 50%;
-            text-align: center;
-            &:first-child {
-                border-right: 1px solid #f1f1f1;
-            }
-            span {
-                display: block;
-            }
-        }
-    }
-
     %fund-important {
         font-size: 20px;
         margin-top: 5px;
     }
-
     .fund-score {
         color: #E73822;
         @extend %fund-important;
     }
-
     .fund-minimal {
         @extend %fund-important;
+    }
+}
+
+.fund-detail {
+    border: 1px solid #f1f1f1;
+    background-color: #F9F9F9;
+    .detail-item {
+        display: inline-block;
+        padding: 15px;
+        width: 50%;
+        text-align: center;
+        &:first-child {
+            border-right: 1px solid #f1f1f1;
+        }
+        span {
+            display: block;
+        }
     }
 }

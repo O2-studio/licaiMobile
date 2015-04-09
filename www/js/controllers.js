@@ -35,10 +35,14 @@ angular.module('starter.controllers', [])
 
     $scope.goDetail = goDetail;
 
-    $scope.items = Funds.all();
+    Funds.all().then(function(list){
+        $scope.items = list;
+    });
 })
 
 .controller('fundDetailCtrl', function($stateParams, $scope, Funds){
-    $scope.fund = Funds.get($stateParams.fundId);
+    Funds.get($stateParams.fundId).then(function(fund){
+        $scope.fund = fund;
+    });
 });
 ;

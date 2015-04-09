@@ -1,4 +1,10 @@
 {
   "name": "myApp",
-  "app_id": ""
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/products",
+      "proxyUrl": "http://apple-pudding-1939.herokuapp.com/products"
+    }
+  ]
 }
