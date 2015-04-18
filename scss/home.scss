@@ -66,3 +66,21 @@
         }
     }
 }
+.categories {
+    padding: 0;
+    margin: 10px;
+}
+
+.category {
+    border: none;
+    display: inline-block;
+    .category-icon {
+        width: 56px;
+    }
+    .category-name {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        font-size: 12px;
+    }
+}

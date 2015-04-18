@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.filters'])
 
 .config(function($httpProvider){
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
@@ -88,7 +88,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'AccountCtrl'
       }
     }
-  });
+  })
+  .state('xintuo', {
+    url: '/xintuo',
+    templateUrl: 'templates/xintuo.html',
+      controller: 'trustCtrl'
+  })
+  ;
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');

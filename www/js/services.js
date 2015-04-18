@@ -1,3 +1,6 @@
+var baseUrl = 'https://apple-pudding-1939.herokuapp.com/';
+
+
 angular.module('starter.services', [])
 
 .factory('Chats', function () {
@@ -89,11 +92,6 @@ angular.module('starter.services', [])
     function pullOne(fundId) {
         var deferred = $q.defer(),
             url = 'https://apple-pudding-1939.herokuapp.com/product/$1?format=json'.replace('$1', fundId);
-//        for (var i = 0; i < funds.length; i++) {
-//            if (funds[i].id == fundId) {
-//                deferred.resolve(funds[i]);
-//            }
-//        }
 
         $http.get(url).success(function(json){
             deferred.resolve(new Fund(json));
@@ -108,4 +106,84 @@ angular.module('starter.services', [])
         all: pullAll,
         get: pullOne
     };
-});
+})
+
+.factory('Category', function(){
+    var categoryList = [{
+        name: '信托产品',
+        icon: '/img/icon_xintuo.jpg',
+        url: '/xintuo'
+    }];
+
+    return {
+        all: function(){
+            return categoryList;
+        }
+    };
+})
+
+.service('Trust', function($q, $http){
+    function Trust(json) {
+        this.id = json.id;
+        this.name = json.name || '';
+        this.threshold = json.threshold || 10000;
+        this.dueTime = json.dueTime || 1;
+        this.reason = json.reason || '推荐理由';
+        this.description = json.shortDesc || '简单介绍';
+        this.profitRate = json.profitRate || 0.01;
+        this.profitType = json.profitType || '收益类型';
+        this.profitDesc = json.profitDesc || '收益简介';
+        this.status = json.status || 1;
+        this.organization = json.organization || '哲赢理财';
+        this.investType = json.investType || '投资方式';
+        this.investArea = json.investArea || '投资领域';
+        this.total = json.total || 1000000;
+        this.investDesc = json.detialDesc || '资金用途';
+        this.riskControl = json.riskControl || '风险控制';
+    }
+
+
+    function pullAll() {
+        var url = baseUrl + 'trustProducts/json',
+            deferred = $q.defer();
+                $http({
+                    method: 'GET',
+                    url: url
+                }).then(function (data) {
+                    var trustList = data.data,
+                        i = 0,
+                        resList = [];
+                    for(;i<trustList.length; i++){
+                        resList.push(new Trust(trustList[i]));
+                    }
+                    trusts = resList;
+                    deferred.resolve(resList);
+                }, function (data) {});
+        return deferred.promise;
+    }
+
+    var trusts = [{
+            name: '信托产品 NO.1'
+        },
+        {
+            name: '信托产品 NO.2'
+        }],
+        categories = [
+            {
+                name: '信托首页',
+                state: 'xintuo'
+            },
+            {
+                name: '优选信托',
+                state: 'xintuo.selected'
+            }
+        ];
+
+    return {
+        allFunds: pullAll,
+        allCategory: function(){
+            return categories;
+        }
+    };
+})
+;

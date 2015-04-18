@@ -7654,6 +7654,21 @@ body {
     .fund-detail .detail-item span {
       display: block; }
 
+.categories {
+  padding: 0;
+  margin: 10px; }
+
+.category {
+  border: none;
+  display: inline-block; }
+  .category .category-icon {
+    width: 56px; }
+  .category .category-name {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px; }
+
 .sub-pages {
   border-collapse: collapse;
   width: 90%;
@@ -7664,3 +7679,30 @@ body {
     height: 42px;
     vertical-align: middle;
     font-weight: bold; }
+
+.trust-header {
+  border-bottom: 3px solid #DCDDDD;
+  height: 32px;
+  position: relative;
+  margin-top: 20px; }
+  .trust-header .trust-category {
+    display: block;
+    border-bottom: 3px solid #D6282A;
+    float: left;
+    line-height: 29px;
+    font-size: 18px;
+    font-family: "microsoft yahei";
+    color: #2F2F2F;
+    font-weight: bold; }
+
+.trusts .left {
+  width: 66%;
+  float: left;
+  font-size: 12px; }
+.trusts .right {
+  width: 33%;
+  padding-top: 10px;
+  float: left;
+  font-size: 12px;
+  text-align: center;
+  border-left: 1px solid #f1f1f1; }

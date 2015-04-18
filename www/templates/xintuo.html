@@ -1,0 +1,47 @@
+<ion-view hide-nav-bar="true">
+    <ion-content class="padding">
+        <ion-list>
+            <ion-item ng-repeat="category in categoryList">
+                <a ui-sref="{{category.state}}">
+                    <i class="icon"></i>
+                    <span class="category-name">{{category.name}}</span>
+                </a>
+            </ion-item>
+        </ion-list>
+
+        <div>
+            <div class="trust-header">
+                <h2 class="trust-category">优选信托</h2>
+            </div>
+        </div>
+        <ion-list type="card" class="trusts">
+            <ion-item ng-repeat="fund in fundList" class="fund-card">
+                <div class="left">
+                    <div class="fund-name">{{fund.name}}</div>
+                    <div>
+                        <span>投资起点:</span>
+                        <span>{{fund.threshold | money}}</span>
+                    </div>
+                    <div>
+                        <span>投资期限：</span>
+                        <span>{{fund.dueTime}}月</span>
+                    </div>
+                    <div>
+                        <span>推荐理由：</span>
+                        <span>{{fund.reason}}</span>
+                    </div>
+                </div>
+                <div class="right">
+                    <div>
+                        <div>预期收益率</div>
+                        <div class="fund-score">{{fund.profitRate*100}}%</div>
+                    </div>
+                    <div>
+                        <span class="fund-status" ng-class="{on:fund.status === 1}">{{fund.status | saleStatus}}</span>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+
+</ion-view>

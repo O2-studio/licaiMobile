@@ -1,0 +1,32 @@
+.trust-header {
+    border-bottom: 3px solid #DCDDDD;
+    height: 32px;
+    position: relative;
+    margin-top: 20px;
+    .trust-category {
+        display: block;
+        border-bottom: 3px solid #D6282A;
+        float: left;
+        line-height: 29px;
+        font-size: 18px;
+        font-family: "microsoft yahei";
+        color: #2F2F2F;
+        font-weight: bold;
+    }
+}
+
+.trusts {
+    .left {
+        width: 66%;
+        float: left;
+        font-size: 12px;
+    }
+    .right {
+        width: 33%;
+        padding-top: 10px;
+        float: left;
+        font-size: 12px;
+        text-align: center;
+        border-left: 1px solid #f1f1f1;
+    }
+}

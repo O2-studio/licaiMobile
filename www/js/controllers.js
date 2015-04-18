@@ -1,6 +1,8 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope, Category) {
+    $scope.categories = Category.all();
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   $scope.chats = Chats.all();
@@ -44,5 +46,13 @@ angular.module('starter.controllers', [])
     Funds.get($stateParams.fundId).then(function(fund){
         $scope.fund = fund;
     });
+})
+
+.controller('trustCtrl', function($scope, Trust){
+    Trust.allFunds().then(function(list){
+        $scope.fundList = list;
+    });
+    $scope.categoryList = Trust.allCategory();
 });
 ;
+
