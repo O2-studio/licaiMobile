@@ -7606,6 +7606,10 @@ a.button {
 body {
   font-family: 微软雅黑, Aria; }
 
+.middle {
+  margin-left: 50%;
+  transform: translateX(-50%); }
+
 .slide-image {
   width: 100%; }
 
