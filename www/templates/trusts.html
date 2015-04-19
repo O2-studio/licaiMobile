@@ -1,0 +1,14 @@
+<ion-view hide-nav-bar="true">
+    <ion-content class="padding">
+        <ion-list>
+            <ion-item ng-repeat="category in categoryList" ui-sref="{{category.state}}">
+                <i class="icon"></i>
+                <span class="category-name">{{category.name}}</span>
+            </ion-item>
+        </ion-list>
+        <ion-nav-view name="trusts-content">
+        </ion-nav-view>
+
+    </ion-content>
+
+</ion-view>

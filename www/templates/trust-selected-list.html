@@ -1,21 +1,12 @@
-<ion-view hide-nav-bar="true">
-    <ion-content class="padding">
-        <ion-list>
-            <ion-item ng-repeat="category in categoryList">
-                <a ui-sref="{{category.state}}">
-                    <i class="icon"></i>
-                    <span class="category-name">{{category.name}}</span>
-                </a>
-            </ion-item>
-        </ion-list>
-
+<ion-view>
+    <ion-content>
         <div>
             <div class="trust-header">
                 <h2 class="trust-category">优选信托</h2>
             </div>
         </div>
         <ion-list type="card" class="trusts">
-            <ion-item ng-repeat="fund in fundList" class="fund-card">
+            <ion-item ng-repeat="fund in fundList" class="fund-card" ui-sref="detail({id: fund.id})">
                 <div class="left">
                     <div class="fund-name">{{fund.name}}</div>
                     <div>
@@ -43,5 +34,4 @@
             </ion-item>
         </ion-list>
     </ion-content>
-
 </ion-view>
