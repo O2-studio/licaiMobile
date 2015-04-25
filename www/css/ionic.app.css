@@ -7606,6 +7606,13 @@ a.button {
 body {
   font-family: 微软雅黑, Aria; }
 
+.middle {
+  margin-left: 50%;
+  transform: translateX(-50%); }
+
+.c {
+  clear: both; }
+
 .slide-image {
   width: 100%; }
 
@@ -7706,3 +7713,71 @@ body {
   font-size: 12px;
   text-align: center;
   border-left: 1px solid #f1f1f1; }
+
+.trust-detail h2 {
+  font-size: 24px;
+  color: #5F6064; }
+.trust-detail .off, .trust-detail .on {
+  display: inline-block;
+  background: #B5B5B6;
+  text-align: center;
+  width: 50px;
+  line-height: 20px;
+  font-size: 10px;
+  color: #fff;
+  font-weight: normal;
+  position: relative;
+  top: -2px;
+  margin-left: 10px; }
+.trust-detail .on {
+  background: #E73822; }
+.trust-detail .detail-table {
+  width: 100%;
+  border: solid 1px gray;
+  border-collapse: collapse; }
+  .trust-detail .detail-table td {
+    border: 1px solid #ddd;
+    line-height: 22px;
+    text-align: left;
+    padding: 4px; }
+  .trust-detail .detail-table th {
+    border: 1px solid #ddd;
+    height: 30px;
+    line-height: 22px;
+    white-space: nowrap;
+    width: 22%;
+    padding: 4px;
+    font-weight: bold; }
+.trust-detail .title-split {
+  font-size: 16px;
+  background: #EEEEEE;
+  height: 36px;
+  line-height: 36px;
+  font-weight: bold;
+  padding-left: 10px;
+  margin-top: 20px;
+  color: #5F6064;
+  margin-bottom: 10px; }
+.trust-detail .order-btn {
+  font-weight: bold; }
+.trust-detail .profit {
+  font-size: 36px;
+  line-height: 60px;
+  font-weight: bold;
+  color: #E73822;
+  float: left; }
+.trust-detail .rate {
+  color: #3d3A39;
+  border-left: 1px solid #ddd;
+  float: right;
+  line-height: 24px;
+  padding-left: 15px;
+  margin: 5px 0;
+  margin-left: 15px;
+  float: left; }
+  .trust-detail .rate .ion-ios-star-outline {
+    color: #ddd;
+    font-size: 15px; }
+  .trust-detail .rate .ion-ios-star {
+    color: gold;
+    font-size: 15px; }

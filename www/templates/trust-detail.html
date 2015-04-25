@@ -1,0 +1,92 @@
+<ion-view hide-nav-bar="true">
+    <ion-content class="padding trust-detail">
+        <!--
+        <table class="sub-pages">
+            <tbody>
+                <tr>
+                    <td class="sub-page">私募首页</td>
+                    <td class="sub-page">优选私募</td>
+                    <td class="sub-page">私募排行</td>
+                </tr>
+                <tr>
+                    <td class="sub-page">私募产品</td>
+                    <td class="sub-page">私募研究</td>
+                    <td class="sub-page">私募学堂</td>
+                </tr>
+            </tbody>
+        </table>
+-->
+
+
+        <h2 ng-switch="fund.status">
+               {{fund.name}}
+               <span ng-switch-when="1" class="on">正在募集</span>
+               <span ng-switch-default class="off">募集结束</span>
+           </h2>
+        <div class="clearfix">
+            <div class="profit">
+                {{fund.profitRate}}%
+            </div>
+            <div class="rate">
+                产品评级:
+                <br>
+                <widget-star class="rate-stars" num="fund.star || 4"></widget-star>
+            </div>
+            <div class="c"></div>
+            <p>{{fund.reason}}</p>
+        </div>
+        <div class="title-split">
+            基本信息
+        </div>
+        <table class="detail-table">
+            <tr>
+                <th>管理机构</th>
+                <td></td>
+                <th>收益类型</th>
+                <td>{{fund.profitType}}</td>
+            </tr>
+            <tr>
+                <th>产品期限</th>
+                <td>{{fund.dueTime}}个月</td>
+                <th>收益分配</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>发行规模</th>
+                <td>{{fund.total || money}}</td>
+                <th>投资方式</th>
+                <td>{{fund.investType}}</td>
+            </tr>
+            <tr>
+                <th>投资领域</th>
+                <td>{{fund.investArea}}</td>
+                <th>投资起点</th>
+                <td>{{fund.threshold || money}}</td>
+            </tr>
+            <tr>
+                <th>收益说明</th>
+                <td colspan="3">{{fund.profitDesc}}</td>
+            </tr>
+        </table>
+
+        <div class="title-split">
+            资金用途
+        </div>
+        <div>
+            {{fund.investDesc}}
+        </div>
+
+
+        <div class="title-split">
+            风控措施
+        </div>
+        <div>
+            {{fund.riskControl}}
+        </div>
+
+
+
+        <button class="button  button-block button-assertive order-btn" ng-click="showPopup()">咨询预约</button>
+
+    </ion-content>
+</ion-view>

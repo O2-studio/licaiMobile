@@ -1,0 +1,82 @@
+.trust-detail {
+    h2 {
+        font-size: 24px;
+        color: #5F6064;
+    }
+    .off {
+        display: inline-block;
+        background: #B5B5B6;
+        text-align: center;
+        width: 50px;
+        line-height: 20px;
+        font-size: 10px;
+        color: #fff;
+        font-weight: normal;
+        position: relative;
+        top: -2px;
+        margin-left: 10px;
+    }
+    .on {
+        @extend .off;
+        background: #E73822;
+    }
+    .detail-table {
+        width: 100%;
+        border: solid 1px gray;
+        border-collapse: collapse;
+        td {
+            border: 1px solid #ddd;
+            line-height: 22px;
+            text-align: left;
+            padding: 4px;
+        }
+        th {
+            border: 1px solid #ddd;
+            height: 30px;
+            line-height: 22px;
+            white-space: nowrap;
+            width: 22%;
+            padding: 4px;
+            font-weight: bold;
+        }
+    }
+    .title-split {
+        font-size: 16px;
+        background: #EEEEEE;
+        height: 36px;
+        line-height: 36px;
+        font-weight: bold;
+        padding-left: 10px;
+        margin-top: 20px;
+        color: #5F6064;
+        margin-bottom: 10px;
+    }
+    .order-btn {
+        font-weight: bold;
+    }
+    .profit {
+        font-size: 36px;
+        line-height: 60px;
+        font-weight: bold;
+        color: #E73822;
+        float: left;
+    }
+    .rate {
+        color: #3d3A39;
+        border-left: 1px solid #ddd;
+        float: right;
+        line-height: 24px;
+        padding-left: 15px;
+        margin: 5px 0;
+        margin-left: 15px;
+        float: left;
+        .ion-ios-star-outline {
+            color: #ddd;
+            font-size: 15px;
+        }
+        .ion-ios-star {
+            color: gold;
+            font-size: 15px;
+        }
+    }
+}

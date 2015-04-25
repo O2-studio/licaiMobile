@@ -48,11 +48,63 @@ angular.module('starter.controllers', [])
     });
 })
 
-.controller('trustCtrl', function($scope, Trust){
+.controller('trustsCtrl', function($scope, Trust){
+    $scope.categoryList = Trust.allCategory();
+})
+
+.controller('SelectedTrustsCtrl', function($scope, Trust){
     Trust.allFunds().then(function(list){
         $scope.fundList = list;
     });
-    $scope.categoryList = Trust.allCategory();
-});
+})
+
+.controller('trustCtrl', function ($scope, $stateParams, Trust, $ionicPopup, PreOrder) {
+    Trust.getById($stateParams.id).then(function (trust) {
+        $scope.trustId = trust.id;
+        $scope.fund = trust;
+    });
+
+
+    $scope.showPopup = function () {
+        $scope.data = {}
+
+        // An elaborate, custom popup
+        var myPopup = $ionicPopup.show({
+            template: '<div><span>您的姓名:</span><input type="text" ng-model="data.name"></div><div><span>手机号码:</span><input type="text" ng-model="data.phone"></div>',
+            title: '该产品火热募集中',
+            subTitle: '留下联系方式，我们帮您第一时间抢占稀缺额度',
+            scope: $scope,
+            buttons: [
+                {
+                    text: '<b>提交预约</b>',
+                    type: 'button-positive',
+                    onTap: function (e) {
+                        if (!$scope.data.phone || !$scope.data.name) {
+                            e.preventDefault();
+                        } else {
+                            return {
+                                userName: $scope.data.name,
+                                userPhone: $scope.data.phone,
+                                id: $scope.trustId
+                            };
+                        }
+                    }
+                }
+            ]
+        });
+        myPopup.then(function (res) {
+            console.log('Tapped!', res);
+            PreOrder.submit(res).then(function(){
+                $ionicPopup.alert({
+                    title: '成功',
+                    template: '已预约，我们的客服会尽快联系您！'
+                });
+            });
+        });
+//        $timeout(function () {
+//            myPopup.close(); //close the popup after 3 seconds for some reason
+//        }, 3000);
+    };
+})
 ;
 

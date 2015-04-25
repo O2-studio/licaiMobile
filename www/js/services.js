@@ -112,7 +112,7 @@ angular.module('starter.services', [])
     var categoryList = [{
         name: '信托产品',
         icon: '/img/icon_xintuo.jpg',
-        url: '/xintuo'
+        url: '/selected'
     }];
 
     return {
@@ -162,6 +162,19 @@ angular.module('starter.services', [])
         return deferred.promise;
     }
 
+    function getBy(id) {
+        var url = baseUrl + 'trustProduct/' + id + '/json',
+            deferred = $q.defer();
+        $http({
+            method: 'GET',
+            url: url
+        }).then(function (data){
+            deferred.resolve(new Trust(data.data));
+        });
+
+        return deferred.promise;
+    }
+
     var trusts = [{
             name: '信托产品 NO.1'
         },
@@ -175,7 +188,7 @@ angular.module('starter.services', [])
             },
             {
                 name: '优选信托',
-                state: 'xintuo.selected'
+                state: 'selected'
             }
         ];
 
@@ -183,7 +196,35 @@ angular.module('starter.services', [])
         allFunds: pullAll,
         allCategory: function(){
             return categories;
-        }
+        },
+        getById: getBy
+    };
+})
+
+.service('PreOrder', function($q, $http, $cookies){
+    var submit = function(data) {
+        var url = '/trustPreorders/json',
+            deferred = $q.defer();
+
+        $http({
+            method: 'POST',
+            url: url,
+            data:JSON.stringify({
+                product_id: data.id,
+                customer_name: data.userName,
+                customer_phone: data.userPhone
+            }),
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8'
+            }
+        }).success(function(){
+            deferred.resolve();
+        });
+
+        return deferred.promise;
+    };
+    return {
+        submit: submit
     };
 })
 ;
