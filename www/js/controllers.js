@@ -61,7 +61,7 @@ angular.module('starter.controllers', [])
 .controller('trustCtrl', function ($scope, $stateParams, Trust, $ionicPopup, PreOrder) {
     Trust.getById($stateParams.id).then(function (trust) {
         $scope.trustId = trust.id;
-        $scope.trust = trust;
+        $scope.fund = trust;
     });
 
 
@@ -85,7 +85,7 @@ angular.module('starter.controllers', [])
                             return {
                                 userName: $scope.data.name,
                                 userPhone: $scope.data.phone,
-                                id: $scope.id
+                                id: $scope.trustId
                             };
                         }
                     }
@@ -95,7 +95,10 @@ angular.module('starter.controllers', [])
         myPopup.then(function (res) {
             console.log('Tapped!', res);
             PreOrder.submit(res).then(function(){
-                debugger;
+                $ionicPopup.alert({
+                    title: '成功',
+                    template: '已预约，我们的客服会尽快联系您！'
+                });
             });
         });
 //        $timeout(function () {

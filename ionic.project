@@ -5,6 +5,14 @@
     {
       "path": "/products",
       "proxyUrl": "http://apple-pudding-1939.herokuapp.com/products"
+    },
+    {
+        "path": "/trustPreorders",
+        "proxyUrl": "http://apple-pudding-1939.herokuapp.com/trustPreorders"
+    },
+    {
+        "path": "/token",
+        "proxyUrl": "http://apple-pudding-1939.herokuapp.com/token"
     }
   ]
 }

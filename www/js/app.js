@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.filters'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.filters', 'ngCookies', 'licai.directives'])
 
 .config(function ($httpProvider) {
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
@@ -106,12 +106,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             url: '/selected',
             templateUrl: 'templates/trust-selected-list.html',
             controller: 'SelectedTrustsCtrl'
-//            views: {
-//                'trust-content': {
-//                    templateUrl: 'templates/trust-selected-list.html',
-//                    controller: 'SelectedTrustsCtrl'
-//                }
-//            }
+                //            views: {
+                //                'trust-content': {
+                //                    templateUrl: 'templates/trust-selected-list.html',
+                //                    controller: 'SelectedTrustsCtrl'
+                //                }
+                //            }
         })
 
     .state('detail', {
@@ -124,4 +124,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/tab/dash');
 
-});
+})
+
+.run(function ($http, $cookies) {
+    $http.get('https://apple-pudding-1939.herokuapp.com/token').then(
+        function (res) {
+            $http.defaults.headers.post['X-CSRFToken'] = res.data.token;
+            $cookies.cstk = res.data.token;
+        });
+})
+
+;

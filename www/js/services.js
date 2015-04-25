@@ -112,7 +112,7 @@ angular.module('starter.services', [])
     var categoryList = [{
         name: '信托产品',
         icon: '/img/icon_xintuo.jpg',
-        url: '/xintuo'
+        url: '/selected'
     }];
 
     return {
@@ -201,18 +201,21 @@ angular.module('starter.services', [])
     };
 })
 
-.service('PreOrder', function($q, $http){
+.service('PreOrder', function($q, $http, $cookies){
     var submit = function(data) {
-        var url = baseUrl + 'trustPreorders/json',
+        var url = '/trustPreorders/json',
             deferred = $q.defer();
 
         $http({
             method: 'POST',
             url: url,
-            data:{
+            data:JSON.stringify({
                 product_id: data.id,
                 customer_name: data.userName,
                 customer_phone: data.userPhone
+            }),
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8'
             }
         }).success(function(){
             deferred.resolve();
